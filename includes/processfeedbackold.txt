@@ -1,0 +1,42 @@
+
+<?php
+require_once('includes/database.php');
+
+// You can add this code at the beginning of the feedback processing script
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    // Redirect to the login page or handle unauthorized access
+    header("Location: login.php");
+    exit();
+}
+
+$userId = $_SESSION['user_id'];
+
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve the feedback from the form
+    $userFeedback = $_POST["feedback"];
+    // You can get the user ID from the session or wherever you store it.
+
+    // Insert the feedback into the database
+    $insertQuery = "INSERT INTO feedback (user_id, feedback_content) VALUES ('$userId', '$userFeedback')";
+    $result = $conn->query($insertQuery);
+
+    if (!$result) {
+        // Handle database insertion error
+        $error = $conn->error;
+        echo "Error: $error";
+    } else {
+        // Redirect the user back to the homepage or a thank you page
+        header("Location: index.php");
+        exit();
+    }
+} else {
+    // If the form is not submitted via POST, redirect to the homepage
+    header("Location: index.php");
+    exit();
+}
+?>
