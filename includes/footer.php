@@ -13,7 +13,6 @@
                     <li>Company Name: Movix</li>
                     <li>Email: <a href="mailto:your-email@gmail.com">your-email@gmail.com</a></li>
                     <li>Twitter: <a href="https://twitter.com/your-twitter-id" target="_blank">@your-twitter-id</a></li>
-                    <li>LinkedIn: <a href="https://www.linkedin.com/in/your-linkedin-id" target="_blank">Your Name</a></li>
                     <li>GitHub: <a href="https://github.com/your-github-id" target="_blank">Your GitHub</a></li>
                     <li>Discord: YourDiscordID#1234</li>
                 </ul>
